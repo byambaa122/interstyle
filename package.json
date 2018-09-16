@@ -11,8 +11,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@mdi/font": "^2.7.94",
     "nuxt": "^1.4.2",
-    "vuetify": "^1.1.14"
+    "vuetify": "^1.2.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

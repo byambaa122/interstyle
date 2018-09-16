@@ -1,1 +1,19 @@
-@require '~vuetify/src/stylus/main.styl'
+@import '~vuetify/src/stylus/main'
+
+.container
+    @media screen and (min-width: 1904px)
+        max-width 1185px
+
+.header
+    background-color #fafafa
+    .container
+        padding 0
+
+.v-toolbar__items
+    .v-btn
+        font-size 16px
+        text-transform none
+        &:before
+            top auto
+            bottom 0
+            height 3px
