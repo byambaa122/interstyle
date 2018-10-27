@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     head: {
         title: 'interstyle',
         meta: [
@@ -11,27 +11,23 @@ module.exports = {
             { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' }
         ]
     },
-    plugins: ['~/plugins/vuetify.js'],
+    plugins: [
+        '~/plugins/vuetify.js'
+    ],
     css: [
+        '@mdi/font/css/materialdesignicons.css',
         '~/assets/style/app.styl'
     ],
-    /*
-    ** Customize the progress bar color
-    */
-    loading: { color: '#3B8070' },
-    /*
-    ** Build configuration
-    */
+    loading: {
+        color: '#525177'
+    },
     build: {
-        vendor: [
-            '~/plugins/vuetify.js'
-        ],
         extractCSS: true,
         /*
         ** Run ESLint on save
         */
-        extend(config, ctx) {
-            if (ctx.isDev && ctx.isClient) {
+        extend(config, { isDev }) {
+            if (isDev && process.client) {
                 config.module.rules.push({
                     enforce: 'pre',
                     test: /\.(js|vue)$/,
