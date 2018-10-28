@@ -22,7 +22,7 @@
                         <!-- Delimiter icon -->
                         <v-icon
                             v-text="delimiterIcon"
-                            color="primary"
+                            color="grey"
                         ></v-icon>
                     </v-btn>
                 </v-item>

@@ -1,5 +1,52 @@
 <template>
     <div>
+        <v-container>
+            <v-layout row>
+                <v-flex xs12 sm6 class="pt-5">
+                    <div class="display-2 font-weight-light mt-5">
+                        Find roommates who <br> aren't assholes
+                    </div>
+                </v-flex>
+                <v-flex xs12 sm6>
+                    <v-img
+                        height="450"
+                        src="/images/family.png"
+                        position="right center"
+                        contain
+                    ></v-img>
+                </v-flex>
+            </v-layout>
+        </v-container>
+        <!-- Make yourself at home -->
+        <!-- Immerse yourself in creating your dream home. With our new Service, you can be sure that it will be perfect. -->
+        <!-- Features -->
+        <v-container class="my-5">
+            <v-layout row wrap>
+                <v-flex v-for="(item, i) in features" :key="i" xs12 sm6 md4>
+                    <Feature
+                        :icon="item.icon"
+                        :title="item.title"
+                        :body="item.body"
+                    />
+                </v-flex>
+            </v-layout>
+        </v-container>
+        <!-- Categories -->
+        <v-container
+            class="pa-0 my-5"
+            grid-list-sm
+            fluid
+        >
+            <v-layout row wrap>
+                <v-flex v-for="(item, i) in categories" :key="i" xs12 sm6 md4 lg3>
+                    <Card
+                        :title="item.title"
+                        :image="item.image"
+                        :url="item.url"
+                    />
+                </v-flex>
+            </v-layout>
+        </v-container>
         <!-- Features -->
         <v-container>
             <v-layout row wrap>
@@ -14,12 +61,13 @@
         </v-container>
         <!-- Products -->
         <v-container grid-list-lg>
-            <div class="page-title">
+            <div class="headline text-xs-center text-uppercase my-5">
                 Онцлох бүтээгдэхүүн
             </div>
-            <v-layout>
-                <v-flex v-for="(item, i) in products" xs12 sm6 md4 lg3>
+            <v-layout row wrap>
+                <v-flex v-for="(item, i) in products" :key="i" xs12 sm6 md4 lg3>
                     <Product
+                        class="mb-3"
                         :name="item.name"
                         :image-src="item.image"
                         :price="item.price"
@@ -47,6 +95,7 @@
 </template>
 
 <script>
+import Card from '~/components/Card'
 import Slider from '~/components/Slider'
 import Product from '~/components/Product'
 import Feature from '~/components/Feature'
@@ -54,6 +103,7 @@ import Review from '~/components/Review'
 
 export default {
     components: {
+        Card,
         Slider,
         Product,
         Feature,
@@ -61,6 +111,83 @@ export default {
     },
     data() {
         return {
+            categories: [
+                {
+                    title: 'Буйдан',
+                    image: '/images/products/1.jpg',
+                    url: '#'
+                },
+                {
+                    title: 'Унтлагын ор',
+                    image: '/images/products/2.jpg',
+                },
+                {
+                    title: 'Давхар ор',
+                    image: '/images/products/3.jpg',
+                },
+                {
+                    title: 'Ажлын ширээ',
+                    image: '/images/products/4.jpg',
+                },
+                {
+                    title: 'Хүүхдийн ширээ',
+                    image: '/images/products/5.jpg',
+                },
+                {
+                    title: 'Хоолны ширээ, сандал',
+                    image: '/images/products/1.jpg',
+                },
+                {
+                    title: 'Хувцасны өлгүүр',
+                    image: '/images/products/2.jpg',
+                },
+                {
+                    title: 'Гал тогоо',
+                    image: '/images/products/3.jpg',
+                }
+            ],
+            products: [
+                {
+                    name: 'Буйдан',
+                    image: '/images/products/1.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хувцасны өлгүүр',
+                    image: '/images/products/2.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хоолны ширээ, сандал',
+                    image: '/images/products/3.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хүүхдийн ширээ',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Буйдан',
+                    image: '/images/products/1.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хувцасны өлгүүр',
+                    image: '/images/products/2.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хоолны ширээ, сандал',
+                    image: '/images/products/3.jpg',
+                    price: '125,000'
+                },
+                {
+                    name: 'Хүүхдийн ширээ',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                }
+            ],
             features: [
                 {
                     icon: 'mdi-trending-down',
@@ -68,7 +195,7 @@ export default {
                     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum.'
                 },
                 {
-                    icon: 'mdi-heart',
+                    icon: 'mdi-thumb-up',
                     title: 'Сэтгэл ханамж',
                     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum.'
                 },
@@ -86,28 +213,6 @@ export default {
                 {
                     name: 'Ж. Биндэръяа',
                     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum. Fusce porttitor facilisis porta.'
-                }
-            ],
-            products: [
-                {
-                    name: 'Ширээ',
-                    image: '/images/products/1.jpg',
-                    price: 'MNT 125,000'
-                },
-                {
-                    name: 'Түшлэгтэй сандал',
-                    image: '/images/products/2.jpg',
-                    price: 'MNT 125,000'
-                },
-                {
-                    name: 'Өргөн ор',
-                    image: '/images/products/3.jpg',
-                    price: 'MNT 125,000'
-                },
-                {
-                    name: 'Өлгүүр',
-                    image: '/images/products/4.jpg',
-                    price: 'MNT 125,000'
                 }
             ]
         }
