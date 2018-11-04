@@ -1,29 +1,43 @@
 <template>
-    <v-app>
+    <v-app v-scroll="onScroll">
+        <!-- Logo -->
+        <v-img
+            class="my-4"
+            height="70"
+            src="/images/logo-small.png"
+            contain
+        ></v-img>
         <!-- Header -->
         <div class="header">
             <v-container>
-                <!-- Toolbar -->
                 <v-toolbar
                     color="white"
                     height="55"
                     flat
                 >
-                    <!-- Logo -->
-                    <v-img
-                        height="40"
-                        max-width="148"
-                        src="/images/logo-symbol.png"
-                        contain
-                    ></v-img>
                     <!-- Spacer -->
                     <v-spacer></v-spacer>
                     <!-- Menu -->
                     <v-toolbar-items class="hidden-sm-and-down">
-                        <v-btn v-for="item in items" :key="item.text" flat>
+                        <v-btn
+                            v-for="item in items"
+                            :key="item.text"
+                            :to="item.to"
+                            flat
+                            nuxt
+                        >
                             {{ item.text }}
                         </v-btn>
+                        <!-- Contact us button -->
+                        <v-btn
+                            @click="scrollTo(9999)"
+                            flat
+                        >
+                            Холбоо барих
+                        </v-btn>
                     </v-toolbar-items>
+                    <!-- Spacer -->
+                    <v-spacer></v-spacer>
                 </v-toolbar>
             </v-container>
         </div>
@@ -31,6 +45,23 @@
         <v-content>
             <nuxt />
         </v-content>
+        <!-- Scroll to top button -->
+        <v-fab-transition>
+            <v-btn
+                v-show="offsetTop > 300"
+                color="blue darken-4"
+                @click="scrollTo(0)"
+                dark
+                fixed
+                bottom
+                right
+                fab
+            >
+                <v-icon>
+                    mdi-chevron-up
+                </v-icon>
+            </v-btn>
+        </v-fab-transition>
         <!-- Footer -->
         <v-footer
             height="auto"
@@ -49,40 +80,64 @@
                             contain
                         ></v-img>
                         <!-- Address -->
-                        <div class="grey--text my-4">
+                        <div class="subheading grey--text text--darken-1 my-4">
                             Монгол улс, Улаанбаатар хот 14180, Сүхбаатар дүүрэг <br class="hidden-sm-and-down"> 11-р хороо, Интерстиль ХХК байр
                         </div>
                     </v-flex>
                     <v-flex xs12 sm6 md5 lg4>
-                        <v-list class="grey lighten-4 text-xs-right" two-line>
+                        <v-list
+                            class="grey lighten-4 text-xs-right"
+                            two-line
+                        >
                             <v-list-tile avatar>
                                 <!-- Icon -->
                                 <v-list-tile-avatar>
-                                    <v-icon>mdi-email</v-icon>
+                                    <v-icon>
+                                        mdi-email
+                                    </v-icon>
                                 </v-list-tile-avatar>
                                 <!-- E-mail address -->
                                 <v-list-tile-content>
-                                    <v-list-tile-title>contact@interstyle.mn</v-list-tile-title>
-                                    <v-list-tile-sub-title>Work</v-list-tile-sub-title>
+                                    <v-list-tile-title>
+                                        contact@interstyle.mn
+                                    </v-list-tile-title>
+                                    <v-list-tile-sub-title>
+                                        Work
+                                    </v-list-tile-sub-title>
                                 </v-list-tile-content>
                             </v-list-tile>
                             <v-list-tile avatar>
                                 <!-- Icon -->
                                 <v-list-tile-avatar>
-                                    <v-icon>mdi-phone</v-icon>
+                                    <v-icon>
+                                        mdi-phone
+                                    </v-icon>
                                 </v-list-tile-avatar>
                                 <!-- Phone number -->
                                 <v-list-tile-content>
-                                    <v-list-tile-title>(11) 352839, (976) 99178192</v-list-tile-title>
-                                    <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                                    <v-list-tile-title>
+                                        (11) 352839, (976) 99178192
+                                    </v-list-tile-title>
+                                    <v-list-tile-sub-title>
+                                        Mobile
+                                    </v-list-tile-sub-title>
                                 </v-list-tile-content>
                             </v-list-tile>
                         </v-list>
                     </v-flex>
                 </v-layout>
                 <v-divider class="my-4"></v-divider>
+                <!-- Social accounts -->
                 <div class="text-xs-center">
-                    <v-btn color="grey darken-1" v-for="(item, i) in socialAccounts" :key="i" flat large icon>
+                    <v-btn
+                        color="grey darken-1"
+                        v-for="(item, i) in socialAccounts"
+                        :key="i"
+                        :url="item.url"
+                        flat
+                        large
+                        icon
+                    >
                         <v-icon>
                             {{ item.icon }}
                         </v-icon>
@@ -97,18 +152,19 @@
 export default {
     data() {
         return {
+            offsetTop: 0,
             items: [
                 {
-                    text: 'Нүүр'
+                    text: 'Нүүр',
+                    to: '/'
                 },
                 {
-                    text: 'Бүтээгдэхүүн'
+                    text: 'Бүтээгдэхүүн',
+                    to: '/products'
                 },
                 {
-                    text: 'Туслах материал'
-                },
-                {
-                    text: 'Холбоо барих'
+                    text: 'Туслах материал',
+                    to: '/materials'
                 }
             ],
             socialAccounts: [
@@ -125,6 +181,14 @@ export default {
                     url: '#'
                 }
             ]
+        }
+    },
+    methods: {
+        onScroll(e) {
+            this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+        },
+        scrollTo(target) {
+            this.$vuetify.goTo(target)
         }
     }
 }

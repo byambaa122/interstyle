@@ -1,29 +1,30 @@
 <template>
     <div>
-        <v-container>
-            <v-layout row>
-                <v-flex xs12 sm6 class="pt-5">
-                    <div class="display-2 font-weight-light mt-5">
-                        Find roommates who <br> aren't assholes
-                    </div>
-                </v-flex>
-                <v-flex xs12 sm6>
-                    <v-img
-                        height="450"
-                        src="/images/family.png"
-                        position="right center"
-                        contain
-                    ></v-img>
-                </v-flex>
+        <v-img
+            src="/images/attachment.png"
+            position="right bottom"
+            height="500"
+            contain
+        ></v-img>
+        <!-- <v-parallax
+            src="/images/attachment.png"
+            height="600"
+        >
+            <v-layout
+                align-center
+                justify-center
+                column
+            >
+                <h1 class="display-3 font-weight-bold">
+                    Create yourself at your home
+                </h1>
             </v-layout>
-        </v-container>
-        <!-- Make yourself at home -->
-        <!-- Immerse yourself in creating your dream home. With our new Service, you can be sure that it will be perfect. -->
+        </v-parallax> -->
         <!-- Features -->
         <v-container class="my-5">
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in features" :key="i" xs12 sm6 md4>
-                    <Feature
+                    <FeatureItem
                         :icon="item.icon"
                         :title="item.title"
                         :body="item.body"
@@ -39,7 +40,7 @@
         >
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in categories" :key="i" xs12 sm6 md4 lg3>
-                    <Card
+                    <CardCategory
                         :title="item.title"
                         :image="item.image"
                         :url="item.url"
@@ -47,33 +48,75 @@
                 </v-flex>
             </v-layout>
         </v-container>
-        <!-- Features -->
-        <v-container>
-            <v-layout row wrap>
-                <v-flex v-for="(item, i) in features" :key="i" xs12 sm6 md4>
-                    <Feature
-                        :icon="item.icon"
-                        :title="item.title"
-                        :body="item.body"
-                    />
-                </v-flex>
-            </v-layout>
-        </v-container>
         <!-- Products -->
         <v-container grid-list-lg>
-            <div class="headline text-xs-center text-uppercase my-5">
-                Онцлох бүтээгдэхүүн
+            <div class="headline text-uppercase my-5">
+                Бүтээгдэхүүн
             </div>
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in products" :key="i" xs12 sm6 md4 lg3>
                     <Product
                         class="mb-3"
+                        :id="item.id"
                         :name="item.name"
                         :image-src="item.image"
                         :price="item.price"
                     />
                 </v-flex>
             </v-layout>
+            <!-- Read more button -->
+            <div class="text-xs-center text-sm-right mt-4">
+                <v-btn
+                    to="/products"
+                    nuxt
+                    large
+                    outline
+                    round
+                >
+                    Цааш үзэх
+                    <v-icon
+                        class="hidden-xs-only"
+                        right
+                    >
+                        mdi-arrow-right
+                    </v-icon>
+                </v-btn>
+            </div>
+        </v-container>
+        <!-- Products -->
+        <v-container grid-list-lg>
+            <div class="headline text-uppercase my-5">
+                Туслах материал
+            </div>
+            <v-layout row wrap>
+                <v-flex v-for="(item, i) in materials" :key="i" xs12 sm6 md4 lg3>
+                    <Product
+                        class="mb-3"
+                        :id="item.id"
+                        :name="item.name"
+                        :image-src="item.image"
+                        :price="item.price"
+                    />
+                </v-flex>
+            </v-layout>
+            <!-- Read more button -->
+            <div class="text-xs-center text-sm-right mt-4">
+                <v-btn
+                    to="/materials"
+                    nuxt
+                    large
+                    outline
+                    round
+                >
+                    Цааш үзэх
+                    <v-icon
+                        class="hidden-xs-only"
+                        right
+                    >
+                        mdi-arrow-right
+                    </v-icon>
+                </v-btn>
+            </div>
         </v-container>
         <!-- Customer comments -->
         <Slider
@@ -83,7 +126,7 @@
             <template slot="items" slot-scope="{ item }">
                 <v-layout row justify-center>
                     <v-flex xs12 sm10 md8 lg4>
-                        <Review
+                        <CustomerReview
                             :name="item.name"
                             :body="item.body"
                         />
@@ -95,19 +138,19 @@
 </template>
 
 <script>
-import Card from '~/components/Card'
-import Slider from '~/components/Slider'
 import Product from '~/components/Product'
-import Feature from '~/components/Feature'
-import Review from '~/components/Review'
+import FeatureItem from '~/components/FeatureItem'
+import CardCategory from '~/components/CardCategory'
+import CustomerReview from '~/components/CustomerReview'
+import Slider from '~/components/Slider'
 
 export default {
     components: {
-        Card,
-        Slider,
         Product,
-        Feature,
-        Review
+        FeatureItem,
+        CardCategory,
+        CustomerReview,
+        Slider,
     },
     data() {
         return {
@@ -148,42 +191,100 @@ export default {
             ],
             products: [
                 {
+                    id: 1,
                     name: 'Буйдан',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хувцасны өлгүүр',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хоолны ширээ, сандал',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хүүхдийн ширээ',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Буйдан',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хувцасны өлгүүр',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хоолны ширээ, сандал',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
+                    id: 1,
                     name: 'Хүүхдийн ширээ',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                }
+            ],
+            materials: [
+                {
+                    id: 1,
+                    name: 'Хавтан',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'Нарсан хавтан',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'Хаалганы нугас',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'ДСП хавтан',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'Хавтан',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'Нарсан хавтан',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'Хаалганы нугас',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    name: 'ДСП хавтан',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 }

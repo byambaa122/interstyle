@@ -1,5 +1,10 @@
 <template>
-    <v-card flat tile>
+    <v-card
+        :to="url(id)"
+        tile
+        flat
+        nuxt
+    >
         <!-- Image -->
         <v-img
             :aspect-ratio="16/9"
@@ -24,6 +29,10 @@
 <script>
 export default {
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -35,6 +44,17 @@ export default {
         price: {
             type: String,
             required: true
+        },
+        material: {
+            type: Boolean,
+            default: false
+        }
+    },
+    methods: {
+        url(id) {
+            return this.material
+                ? `/materials/${id}`
+                : `/products/${id}`
         }
     }
 }

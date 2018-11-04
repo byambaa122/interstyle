@@ -1,5 +1,9 @@
 @import '~vuetify/src/stylus/main'
 
+box-shadow(args...)
+    -webkit-box-shadow args
+    box-shadow args
+
 .theme--light.application
     background-color #fff
 
@@ -8,6 +12,7 @@
         max-width 1185px
 
 .header
+    border-top 1px solid rgba(0, 0, 0, 0.12)
     background-color #fff
 
     .container
@@ -15,9 +20,26 @@
 
 .v-toolbar__items
     .v-btn
-        font-size 13px
+        font-size 16px
+        border-radius 0
+
+        &:not(.v-btn--active)
+            color #757575
 
         &:before
             top auto
             bottom 0
             height 3px
+
+.v-btn
+    text-transform none
+
+.v-pagination__item,
+.v-pagination__navigation
+    font-weight 500
+    box-shadow none
+    outline none
+
+    &:not(.v-pagination__item--active)
+        background-color #f5f5f5 !important
+        color #757575 !important

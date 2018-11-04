@@ -1,14 +1,16 @@
 <template>
-    <v-card flat>
+    <v-card
+        class="mb-4"
+        flat
+    >
         <!-- Icon -->
         <div class="text-xs-center">
             <v-avatar
-                color="grey lighten-5"
+                color="grey lighten-4"
                 size="100"
             >
                 <v-icon
                     v-text="icon"
-                    color="primary"
                     size="50"
                 ></v-icon>
             </v-avatar>
