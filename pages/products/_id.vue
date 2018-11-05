@@ -1,7 +1,25 @@
 <template>
     <div>
         <v-container grid-list-lg>
-            
+            <v-layout row wrap>
+                <v-flex xs12 md6 lg7>
+                    <v-responsive :aspect-ratio="16/9">
+                        <v-carousel
+                            height="auto"
+                            hide-delimiters
+                        >
+                            <v-carousel-item
+                                v-for="(image, i) in product.images"
+                                :key="i"
+                                :src="image"
+                            ></v-carousel-item>
+                        </v-carousel>
+                    </v-responsive>
+                </v-flex>
+                <v-flex xs12 md6 lg5>
+                    
+                </v-flex>
+            </v-layout>
         </v-container>
         <!-- Suggested products -->
         <v-container grid-list-lg>
@@ -29,7 +47,11 @@ import Product from '~/components/Product'
 const defaultProduct = {
     id: '',
     name: '',
-    price: ''
+    price: '',
+    images: [
+        '/images/products/1.jpg',
+        '/images/products/2.jpg'
+    ]
 }
 
 export default {

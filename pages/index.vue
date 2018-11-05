@@ -1,25 +1,15 @@
 <template>
     <div>
-        <v-img
+        <!-- <v-img
             src="/images/attachment.png"
             position="right bottom"
             height="500"
             contain
-        ></v-img>
-        <!-- <v-parallax
-            src="/images/attachment.png"
-            height="600"
-        >
-            <v-layout
-                align-center
-                justify-center
-                column
-            >
-                <h1 class="display-3 font-weight-bold">
-                    Create yourself at your home
-                </h1>
-            </v-layout>
-        </v-parallax> -->
+        ></v-img> -->
+        <v-parallax
+            src="/images/home.jpg"
+            height="500"
+        ></v-parallax>
         <!-- Features -->
         <v-container class="my-5">
             <v-layout row wrap>
@@ -42,6 +32,7 @@
                 <v-flex v-for="(item, i) in categories" :key="i" xs12 sm6 md4 lg3>
                     <CardCategory
                         :title="item.title"
+                        :products-count="17"
                         :image="item.image"
                         :url="item.url"
                     />

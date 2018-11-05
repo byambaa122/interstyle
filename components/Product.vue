@@ -16,10 +16,10 @@
             {{ name }}
         </div>
         <!-- Product price -->
-        <div class="subheading font-weight-light grey--text text--darken-1">
+        <div class="subheading grey--text text--darken-1">
             {{ price }}
             <!-- Currency symbol -->
-            <span class="caption font-weight-light">
+            <span class="caption">
                 MNT
             </span>
         </div>

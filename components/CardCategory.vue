@@ -27,7 +27,7 @@
                             <v-flex>
                                 <!-- Description -->
                                 <div class="subheading grey--text text--lighten-2 font-weight-light">
-                                    17 тавилга
+                                    {{ productsCount }} тавилга
                                 </div>
                                 <!-- Title -->
                                 <div class="headline font-weight-bold">
@@ -63,6 +63,10 @@ export default {
     props: {
         title: {
             type: String,
+            required: true
+        },
+        productsCount: {
+            type: Number,
             required: true
         },
         image: {

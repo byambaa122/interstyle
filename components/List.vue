@@ -3,7 +3,11 @@
         <v-layout row wrap>
             <!-- Categories -->
             <v-flex xs12 sm5 md4 lg3>
-                <v-card flat tile>
+                <v-card
+                    v-sticky="options"
+                    flat
+                    tile
+                >
                     <v-list>
                         <template v-for="(category, i) in categories">
                             <v-list-tile
@@ -18,7 +22,9 @@
                                 </v-list-tile-avatar>
                                 <!-- Name -->
                                 <v-list-tile-content>
-                                    <v-list-tile-title v-text="category.name"></v-list-tile-title>
+                                    <v-list-tile-title>
+                                        {{ category.name }}
+                                    </v-list-tile-title>
                                 </v-list-tile-content>
                             </v-list-tile>
                             <!-- Divider -->
@@ -76,14 +82,25 @@ export default {
             default: false
         }
     },
+    data() {
+        return {
+            options: {
+                zIndex: 2,
+                stickyTop: 100,
+                disabled: false
+            }
+        }
+    },
     components: {
         Product
     },
     methods: {
         url(id) {
+            const baseUrl = `/categories/${id}`
+
             return this.material
-                ? `/materials/categories/${id}`
-                : `/products/categories/${id}`
+                ? `/materials/${baseUrl}`
+                : `/products/${baseUrl}`
         }
     }
 }
