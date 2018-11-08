@@ -40,8 +40,10 @@
                         <Product
                             class="mb-3"
                             :name="item.name"
+                            :category="item.category"
                             :image-src="item.image"
                             :price="item.price"
+                            :size="item.size"
                             :material="material"
                         />
                     </v-flex>

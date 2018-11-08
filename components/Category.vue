@@ -1,10 +1,10 @@
 <template>
     <v-hover>
         <v-card
-            :to="url"
-            :nuxt="!!url"
+            :to="url(id)"
             :class="{ 'active': hover }"
             slot-scope="{ hover }"
+            nuxt
             flat
             tile
         >
@@ -34,22 +34,6 @@
                                     {{ title }}
                                 </div>
                             </v-flex>
-                            <v-flex>
-                                <v-layout
-                                    fill-height
-                                    align-center
-                                    justify-end
-                                    row
-                                >
-                                    <!-- Direction icon -->
-                                    <v-avatar :color="color">
-                                        <v-icon
-                                            v-text="icon"
-                                            color="primary"
-                                        ></v-icon>
-                                    </v-avatar>
-                                </v-layout>
-                            </v-flex>
                         </v-layout>
                     </v-flex>
                 </v-layout>
@@ -61,6 +45,10 @@
 <script>
 export default {
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true
@@ -72,17 +60,16 @@ export default {
         image: {
             type: String,
             required: true
-        },
-        url: {
-            type: String,
-            default: ''
         }
     },
     data() {
         return {
-            gradient: 'to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.6) 100%',
-            color: 'rgba(255, 255, 255, 0.2)',
-            icon: 'mdi-arrow-right'
+            gradient: 'to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.6) 100%'
+        }
+    },
+    methods: {
+        url(id) {
+            return `/products/categories/${id}`
         }
     }
 }

@@ -12,16 +12,21 @@
             contain
         ></v-img>
         <!-- Product name -->
-        <div class="subheading mt-2">
-            {{ name }}
+        <div class="mt-2">
+            <span class="grey--text text--darken-1">{{ name }}</span>
+        </div>
+        <div class="title">
+            {{ category }}
         </div>
         <!-- Product price -->
-        <div class="subheading grey--text text--darken-1">
-            {{ price }}
-            <!-- Currency symbol -->
-            <span class="caption">
-                MNT
-            </span>
+        <div class="mt-2">
+            <div class="subheading grey--text text--darken-1">
+                {{ price }}
+                <!-- Currency symbol -->
+                <span class="caption">
+                    MNT
+                </span>
+            </div>
         </div>
     </v-card>
 </template>
@@ -37,11 +42,19 @@ export default {
             type: String,
             required: true
         },
+        category: {
+            type: String,
+            required: true
+        },
         imageSrc: {
             type: String,
             required: true
         },
         price: {
+            type: String,
+            required: true
+        },
+        size: {
             type: String,
             required: true
         },

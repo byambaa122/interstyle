@@ -66,111 +66,147 @@ export default {
             products: [
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/1.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/2.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/3.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/4.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/1.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/2.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/3.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/4.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/1.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/2.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/3.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/4.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/1.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/2.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/3.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/4.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/1.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    name: '#0012746',
+                    category: 'Ажлын ширээ',
                     image: '/images/products/2.jpg',
-                    price: '125,000'
+                    price: '125,000',
+                    size: '1200мм X 1400мм X 600мм'
                 }
             ]
         }

@@ -49,7 +49,7 @@
         <v-fab-transition>
             <v-btn
                 v-show="offsetTop > 300"
-                color="blue darken-4"
+                color="primary"
                 @click="scrollTo(0)"
                 dark
                 fixed

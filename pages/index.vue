@@ -30,11 +30,11 @@
         >
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in categories" :key="i" xs12 sm6 md4 lg3>
-                    <CardCategory
+                    <Category
+                        :id="item.id"
                         :title="item.title"
                         :products-count="17"
                         :image="item.image"
-                        :url="item.url"
                     />
                 </v-flex>
             </v-layout>
@@ -130,16 +130,16 @@
 
 <script>
 import Product from '~/components/Product'
-import FeatureItem from '~/components/FeatureItem'
-import CardCategory from '~/components/CardCategory'
+import Category from '~/components/Category'
 import CustomerReview from '~/components/CustomerReview'
+import FeatureItem from '~/components/FeatureItem'
 import Slider from '~/components/Slider'
 
 export default {
     components: {
         Product,
         FeatureItem,
-        CardCategory,
+        Category,
         CustomerReview,
         Slider,
     },
@@ -147,37 +147,44 @@ export default {
         return {
             categories: [
                 {
+                    id: 1,
                     title: 'Буйдан',
-                    image: '/images/products/1.jpg',
-                    url: '#'
+                    image: '/images/products/1.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Унтлагын ор',
-                    image: '/images/products/2.jpg',
+                    image: '/images/products/2.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Давхар ор',
-                    image: '/images/products/3.jpg',
+                    image: '/images/products/3.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Ажлын ширээ',
-                    image: '/images/products/4.jpg',
+                    image: '/images/products/4.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Хүүхдийн ширээ',
-                    image: '/images/products/5.jpg',
+                    image: '/images/products/5.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Хоолны ширээ, сандал',
-                    image: '/images/products/1.jpg',
+                    image: '/images/products/1.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Хувцасны өлгүүр',
-                    image: '/images/products/2.jpg',
+                    image: '/images/products/2.jpg'
                 },
                 {
+                    id: 1,
                     title: 'Гал тогоо',
-                    image: '/images/products/3.jpg',
+                    image: '/images/products/3.jpg'
                 }
             ],
             products: [

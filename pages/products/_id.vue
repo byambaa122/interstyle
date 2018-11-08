@@ -1,6 +1,11 @@
 <template>
     <div>
-        <v-container grid-list-lg>
+        <!-- Image -->
+        <v-parallax
+            :src="product.images[0]"
+            height="500"
+        ></v-parallax>
+        <!-- <v-container grid-list-lg>
             <v-layout row wrap>
                 <v-flex xs12 md6 lg7>
                     <v-responsive :aspect-ratio="16/9">
@@ -20,7 +25,7 @@
                     
                 </v-flex>
             </v-layout>
-        </v-container>
+        </v-container> -->
         <!-- Suggested products -->
         <v-container grid-list-lg>
             <div class="headline text-uppercase my-5">
