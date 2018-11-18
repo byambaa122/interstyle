@@ -66,109 +66,109 @@ export default {
             materials: [
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 }

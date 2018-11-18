@@ -11,23 +11,37 @@
             :src="imageSrc"
             contain
         ></v-img>
-        <!-- Product name -->
-        <div class="mt-2">
-            <span class="grey--text text--darken-1">{{ name }}</span>
-        </div>
-        <div class="title">
-            {{ category }}
-        </div>
-        <!-- Product price -->
-        <div class="mt-2">
-            <div class="subheading grey--text text--darken-1">
-                {{ price }}
-                <!-- Currency symbol -->
-                <span class="caption">
-                    MNT
-                </span>
-            </div>
-        </div>
+        <v-container
+            class="pa-0"
+            fluid
+        >
+            <v-layout
+                fill-height
+                align-center
+                row
+            >
+                <v-flex>
+                    <div class="my-2">
+                        <div class="grey--text text--darken-1 font-weight-light">
+                            Код
+                        </div>
+                        <div class="subheading font-weight-medium">
+                            {{ code }}
+                        </div>
+                    </div>
+                </v-flex>
+                <v-flex>
+                    <!-- Price -->
+                    <div class="title font-weight-regular text-xs-right">
+                        {{ price }}
+                        <!-- Currency symbol -->
+                        <span class="caption grey--text text--darken-1">
+                            MNT
+                        </span>
+                    </div>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </v-card>
 </template>
 
@@ -38,11 +52,7 @@ export default {
             type: Number,
             required: true
         },
-        name: {
-            type: String,
-            required: true
-        },
-        category: {
+        code: {
             type: String,
             required: true
         },
@@ -54,18 +64,14 @@ export default {
             type: String,
             required: true
         },
-        size: {
-            type: String,
-            required: true
-        },
-        material: {
+        isMaterial: {
             type: Boolean,
             default: false
         }
     },
     methods: {
         url(id) {
-            return this.material
+            return this.isMaterial
                 ? `/materials/${id}`
                 : `/products/${id}`
         }

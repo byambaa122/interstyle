@@ -4,6 +4,6 @@ import Vuetify from 'vuetify'
 Vue.use(Vuetify, {
     iconfont: 'mdi',
     theme: {
-        primary: '#0d47a1'
+        primary: '#003459'
     }
 })

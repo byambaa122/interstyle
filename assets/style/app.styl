@@ -30,9 +30,23 @@ box-shadow(args...)
             top auto
             bottom 0
             height 3px
+            opacity 0.3
+
+        &.v-btn--active
+            color #0d47a1
+
+            &:before
+                opacity 1
+                background-color #0d47a1
 
 .v-btn
+    margin 0
     text-transform none
+
+.v-speed-dial,
+.v-datatable__actions
+    .v-btn
+        margin 6px 8px
 
 .v-pagination__item,
 .v-pagination__navigation
@@ -46,3 +60,11 @@ box-shadow(args...)
 
 .v-list
     padding 0
+
+.v-list__tile
+    &.v-list__tile--active
+        .v-icon
+            color #0d47a1
+
+        .v-list__tile__title
+            font-weight 500

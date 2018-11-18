@@ -41,15 +41,14 @@
         </v-container>
         <!-- Products -->
         <v-container grid-list-lg>
-            <div class="headline text-uppercase my-5">
+            <div class="headline text-uppercase text-xs-center my-5">
                 Бүтээгдэхүүн
             </div>
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in products" :key="i" xs12 sm6 md4 lg3>
                     <Product
-                        class="mb-3"
                         :id="item.id"
-                        :name="item.name"
+                        :code="item.code"
                         :image-src="item.image"
                         :price="item.price"
                     />
@@ -59,10 +58,10 @@
             <div class="text-xs-center text-sm-right mt-4">
                 <v-btn
                     to="/products"
-                    nuxt
                     large
                     outline
                     round
+                    nuxt
                 >
                     Цааш үзэх
                     <v-icon
@@ -76,28 +75,27 @@
         </v-container>
         <!-- Products -->
         <v-container grid-list-lg>
-            <div class="headline text-uppercase my-5">
+            <div class="headline text-uppercase text-xs-center my-5">
                 Туслах материал
             </div>
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in materials" :key="i" xs12 sm6 md4 lg3>
                     <Product
-                        class="mb-3"
                         :id="item.id"
-                        :name="item.name"
+                        :code="item.code"
                         :image-src="item.image"
                         :price="item.price"
                     />
                 </v-flex>
             </v-layout>
             <!-- Read more button -->
-            <div class="text-xs-center text-sm-right mt-4">
+            <div class="text-xs-center text-sm-right mt-5">
                 <v-btn
                     to="/materials"
-                    nuxt
                     large
                     outline
                     round
+                    nuxt
                 >
                     Цааш үзэх
                     <v-icon
@@ -114,8 +112,14 @@
             :items="reviews"
             class="my-5"
         >
-            <template slot="items" slot-scope="{ item }">
-                <v-layout row justify-center>
+            <template
+                slot="items"
+                slot-scope="{ item }"
+            >
+                <v-layout
+                    justify-center
+                    row
+                >
                     <v-flex xs12 sm10 md8 lg4>
                         <CustomerReview
                             :name="item.name"
@@ -190,49 +194,49 @@ export default {
             products: [
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 }
@@ -240,49 +244,49 @@ export default {
             materials: [
                 {
                     id: 1,
-                    name: 'Хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Нарсан хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хаалганы нугас',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'ДСП хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Нарсан хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хаалганы нугас',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'ДСП хавтан',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 }

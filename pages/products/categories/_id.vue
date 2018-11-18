@@ -28,37 +28,37 @@ export default {
                     icon: 'mdi-sofa'
                 },
                 {
-                    id: 1,
+                    id: 2,
                     name: 'Унтлагын ор',
                     icon: 'mdi-hotel'
                 },
                 {
-                    id: 1,
+                    id: 3,
                     name: 'Давхар ор',
                     icon: 'mdi-seat-flat'
                 },
                 {
-                    id: 1,
+                    id: 4,
                     name: 'Ажлын ширээ',
                     icon: 'mdi-office'
                 },
                 {
-                    id: 1,
+                    id: 5,
                     name: 'Хүүхдийн ширээ',
                     icon: 'mdi-baby'
                 },
                 {
-                    id: 1,
+                    id: 6,
                     name: 'Хоолны ширээ, сандал',
                     icon: 'mdi-silverware'
                 },
                 {
-                    id: 1,
+                    id: 7,
                     name: 'Хувцасны өлгүүр',
                     icon: 'mdi-hanger'
                 },
                 {
-                    id: 1,
+                    id: 8,
                     name: 'Гал тогоо',
                     icon: 'mdi-fridge-outline'
                 }
@@ -66,109 +66,109 @@ export default {
             products: [
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хоолны ширээ, сандал',
+                    code: 'LB0214',
                     image: '/images/products/3.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хүүхдийн ширээ',
+                    code: 'LB0214',
                     image: '/images/products/4.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Буйдан',
+                    code: 'LB0214',
                     image: '/images/products/1.jpg',
                     price: '125,000'
                 },
                 {
                     id: 1,
-                    name: 'Хувцасны өлгүүр',
+                    code: 'LB0214',
                     image: '/images/products/2.jpg',
                     price: '125,000'
                 }

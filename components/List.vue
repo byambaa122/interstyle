@@ -4,7 +4,6 @@
             <!-- Categories -->
             <v-flex xs12 sm5 md4 lg3>
                 <v-card
-                    v-sticky="options"
                     flat
                     tile
                 >
@@ -39,12 +38,10 @@
                     <v-flex v-for="(item, i) in items" :key="i" xs12 md6 lg4>
                         <Product
                             class="mb-3"
-                            :name="item.name"
-                            :category="item.category"
+                            :code="item.code"
                             :image-src="item.image"
                             :price="item.price"
-                            :size="item.size"
-                            :material="material"
+                            :is-material="isMaterial"
                         />
                     </v-flex>
                 </v-layout>
@@ -79,7 +76,7 @@ export default {
                 return []
             }
         },
-        material: {
+        isMaterial: {
             type: Boolean,
             default: false
         }
@@ -98,7 +95,7 @@ export default {
     },
     methods: {
         url(id) {
-            const baseUrl = `/categories/${id}`
+            const baseUrl = `categories/${id}`
 
             return this.material
                 ? `/materials/${baseUrl}`
