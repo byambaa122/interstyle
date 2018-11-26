@@ -1,16 +1,37 @@
-## Build Setup
+# interstyle
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+Интерстиль ХХК танилцуулга веб хуудас.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- [Vue JS](https://vuejs.org)
+- [Nuxt JS](https://nuxtjs.org)
+- [Vuex](https://vuex.vuejs.org)
+- [Axios](https://github.com/axios/axios)
+- [Vuetify](https://vuetifyjs.com)
 
-# build for production and launch server
-$ npm run build
-$ npm start
+### Installation
 
-# generate static project
-$ npm run generate
+```
+git clone
+npm install
+```
+
+### Starting the server
+
+```
+npm run dev
+```
+
+The server will run on port 3000.
+
+### Run server in production
+
+```
+npm run build
+npm start
+```
+
+### Generate static project
+
+```
+npm run generate
 ```

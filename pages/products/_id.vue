@@ -63,40 +63,6 @@
                         </v-carousel>
                     </v-responsive>
                 </v-flex>
-                <!-- <v-flex xs12 md6 lg5>
-                    <v-list two-line>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-sub-title>
-                                    Код
-                                </v-list-tile-sub-title>
-                                <v-list-tile-title>
-                                    #0017002
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-sub-title>
-                                    Ангилал
-                                </v-list-tile-sub-title>
-                                <v-list-tile-title>
-                                    Ажлын ширээ
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-tile>
-                            <v-list-tile-content>
-                                <v-list-tile-sub-title>
-                                    Үнэ
-                                </v-list-tile-sub-title>
-                                <v-list-tile-title>
-                                    125,000 MNT
-                                </v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </v-list>
-                </v-flex> -->
             </v-layout>
         </v-container>
         <!-- Suggested products -->
@@ -123,49 +89,49 @@
 import Product from '~/components/Product'
 
 const defaultProduct = {
-    id: '',
-    name: '',
-    price: '',
-    images: [
-        '/images/products/1.jpg',
-        '/images/products/2.jpg'
-    ]
+  id: '',
+  name: '',
+  price: '',
+  images: [
+    '/images/products/1.jpg',
+    '/images/products/2.jpg'
+  ]
 }
 
 export default {
-    components: {
-        Product
-    },
-    data() {
-        return {
-            product: defaultProduct,
-            suggests: [
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/1.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/2.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/3.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                }
-            ]
+  components: {
+    Product
+  },
+  data() {
+    return {
+      product: defaultProduct,
+      suggests: [
+        {
+          id: 1,
+          code: 'LB0214',
+          image: '/images/products/1.jpg',
+          price: '125,000'
+        },
+        {
+          id: 1,
+          code: 'LB0214',
+          image: '/images/products/2.jpg',
+          price: '125,000'
+        },
+        {
+          id: 1,
+          code: 'LB0214',
+          image: '/images/products/3.jpg',
+          price: '125,000'
+        },
+        {
+          id: 1,
+          code: 'LB0214',
+          image: '/images/products/4.jpg',
+          price: '125,000'
         }
+      ]
     }
+  }
 }
 </script>

@@ -1,11 +1,5 @@
 <template>
     <div>
-        <!-- <v-img
-            src="/images/attachment.png"
-            position="right bottom"
-            height="500"
-            contain
-        ></v-img> -->
         <v-parallax
             src="/images/home.jpg"
             height="500"
@@ -14,7 +8,7 @@
         <v-container class="my-5">
             <v-layout row wrap>
                 <v-flex v-for="(item, i) in features" :key="i" xs12 sm6 md4>
-                    <FeatureItem
+                    <Feature
                         :icon="item.icon"
                         :title="item.title"
                         :body="item.body"
@@ -29,11 +23,11 @@
             fluid
         >
             <v-layout row wrap>
-                <v-flex v-for="(item, i) in categories" :key="i" xs12 sm6 md4 lg3>
+                <v-flex v-for="(item, i) in productCategories" :key="i" xs12 sm6 md4 lg3>
                     <Category
                         :id="item.id"
                         :title="item.title"
-                        :products-count="17"
+                        :products-count="item.productCount"
                         :image="item.image"
                     />
                 </v-flex>
@@ -49,7 +43,7 @@
                     <Product
                         :id="item.id"
                         :code="item.code"
-                        :image-src="item.image"
+                        :image-src="item.images[0]"
                         :price="item.price"
                     />
                 </v-flex>
@@ -83,7 +77,7 @@
                     <Product
                         :id="item.id"
                         :code="item.code"
-                        :image-src="item.image"
+                        :image-src="item.images[0]"
                         :price="item.price"
                     />
                 </v-flex>
@@ -109,7 +103,7 @@
         </v-container>
         <!-- Customer comments -->
         <Slider
-            :items="reviews"
+            :items="quotes"
             class="my-5"
         >
             <template
@@ -121,7 +115,7 @@
                     row
                 >
                     <v-flex xs12 sm10 md8 lg4>
-                        <CustomerReview
+                        <Quote
                             :name="item.name"
                             :body="item.body"
                         />
@@ -133,192 +127,43 @@
 </template>
 
 <script>
-import Product from '~/components/Product'
-import Category from '~/components/Category'
-import CustomerReview from '~/components/CustomerReview'
-import FeatureItem from '~/components/FeatureItem'
-import Slider from '~/components/Slider'
+import {
+  Category,
+  Feature,
+  Product,
+  Quote,
+  Slider
+} from '~/components'
 
 export default {
-    components: {
-        Product,
-        FeatureItem,
-        Category,
-        CustomerReview,
-        Slider,
-    },
-    data() {
-        return {
-            categories: [
-                {
-                    id: 1,
-                    title: 'Буйдан',
-                    image: '/images/products/1.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Унтлагын ор',
-                    image: '/images/products/2.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Давхар ор',
-                    image: '/images/products/3.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Ажлын ширээ',
-                    image: '/images/products/4.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Хүүхдийн ширээ',
-                    image: '/images/products/5.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Хоолны ширээ, сандал',
-                    image: '/images/products/1.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Хувцасны өлгүүр',
-                    image: '/images/products/2.jpg'
-                },
-                {
-                    id: 1,
-                    title: 'Гал тогоо',
-                    image: '/images/products/3.jpg'
-                }
-            ],
-            products: [
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/1.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/2.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/3.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/1.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/2.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/3.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                }
-            ],
-            materials: [
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                }
-            ],
-            features: [
-                {
-                    icon: 'mdi-trending-down',
-                    title: 'Хямд үнэ',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum.'
-                },
-                {
-                    icon: 'mdi-thumb-up',
-                    title: 'Сэтгэл ханамж',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum.'
-                },
-                {
-                    icon: 'mdi-truck-fast',
-                    title: 'Хүргэлт',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum.'
-                }
-            ],
-            reviews: [
-                {
-                    name: 'А. Болд',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum. Fusce porttitor facilisis porta.'
-                },
-                {
-                    name: 'Ж. Биндэръяа',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim porta libero vel bibendum. Fusce porttitor facilisis porta.'
-                }
-            ]
-        }
+  components: {
+    Category,
+    Feature,
+    Product,
+    Quote,
+    Slider
+  },
+  async asyncData({ app }) {
+    // Get all quotes
+    const { quotes } = await app.$axios.$get('quotes')
+    // Get all features
+    const { features } = await app.$axios.$get('features')
+    // Get special products
+    const { products } = await app.$axios.$get('special/products')
+    // Get special materials
+    const { materials } = await app.$axios.$get('special/materials')
+    // Get all product categories
+    const { productCategories } = await app.$axios.$get('product/categories')
+
+    console.log(productCategories)
+
+    return {
+      quotes,
+      features,
+      productCategories,
+      products,
+      materials
     }
+  }
 }
 </script>
