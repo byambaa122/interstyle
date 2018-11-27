@@ -2,9 +2,10 @@
     <v-app v-scroll="onScroll">
         <!-- Logo -->
         <v-img
-            class="my-4"
             height="70"
+            max-height="70"
             src="/images/logo-small.png"
+            class="my-4"
             contain
         ></v-img>
         <!-- Header -->

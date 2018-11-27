@@ -10,7 +10,7 @@
         >
             <!-- Image -->
             <v-img
-                :src="image"
+                :src="`${baseUrl}/${image}`"
                 :aspect-ratio="16/9"
                 :gradient="gradient"
             >
@@ -29,9 +29,9 @@
                                 <div class="subheading grey--text text--lighten-2 font-weight-light">
                                     {{ productsCount }} тавилга
                                 </div>
-                                <!-- Title -->
+                                <!-- Name -->
                                 <div class="headline font-weight-bold">
-                                    {{ title }}
+                                    {{ name }}
                                 </div>
                             </v-flex>
                         </v-layout>
@@ -49,7 +49,7 @@ export default {
             type: Number,
             required: true
         },
-        title: {
+        name: {
             type: String,
             required: true
         },
@@ -64,6 +64,7 @@ export default {
     },
     data() {
         return {
+            baseUrl: process.env.BASE_URL,
             gradient: 'to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.6) 100%'
         }
     },

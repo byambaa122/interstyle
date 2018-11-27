@@ -8,8 +8,7 @@
         <!-- Image -->
         <v-img
             :aspect-ratio="16/9"
-            :src="imageSrc"
-            contain
+            :src="`${baseUrl}/${image}`"
         ></v-img>
         <v-container
             class="pa-0"
@@ -56,17 +55,22 @@ export default {
             type: String,
             required: true
         },
-        imageSrc: {
+        image: {
             type: String,
             required: true
         },
         price: {
-            type: String,
+            type: Number,
             required: true
         },
         isMaterial: {
             type: Boolean,
             default: false
+        }
+    },
+    data() {
+        return {
+            baseUrl: process.env.BASE_URL
         }
     },
     methods: {

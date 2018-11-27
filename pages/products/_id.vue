@@ -89,49 +89,49 @@
 import Product from '~/components/Product'
 
 const defaultProduct = {
-  id: '',
-  name: '',
-  price: '',
-  images: [
-    '/images/products/1.jpg',
-    '/images/products/2.jpg'
-  ]
+    id: '',
+    name: '',
+    price: '',
+    images: [
+        '/images/products/1.jpg',
+        '/images/products/2.jpg'
+    ]
 }
 
 export default {
-  components: {
-    Product
-  },
-  data() {
-    return {
-      product: defaultProduct,
-      suggests: [
-        {
-          id: 1,
-          code: 'LB0214',
-          image: '/images/products/1.jpg',
-          price: '125,000'
-        },
-        {
-          id: 1,
-          code: 'LB0214',
-          image: '/images/products/2.jpg',
-          price: '125,000'
-        },
-        {
-          id: 1,
-          code: 'LB0214',
-          image: '/images/products/3.jpg',
-          price: '125,000'
-        },
-        {
-          id: 1,
-          code: 'LB0214',
-          image: '/images/products/4.jpg',
-          price: '125,000'
+    components: {
+        Product
+    },
+    data() {
+        return {
+            product: defaultProduct,
+            suggests: [
+                {
+                    id: 1,
+                    code: 'LB0214',
+                    image: '/images/products/1.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    code: 'LB0214',
+                    image: '/images/products/2.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    code: 'LB0214',
+                    image: '/images/products/3.jpg',
+                    price: '125,000'
+                },
+                {
+                    id: 1,
+                    code: 'LB0214',
+                    image: '/images/products/4.jpg',
+                    price: '125,000'
+                }
+            ]
         }
-      ]
     }
-  }
 }
 </script>

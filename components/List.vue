@@ -17,7 +17,9 @@
                             >
                                 <!-- Icon -->
                                 <v-list-tile-avatar>
-                                    <v-icon v-text="category.icon"></v-icon>
+                                    <v-icon>
+                                        {{ category.icon }}
+                                    </v-icon>
                                 </v-list-tile-avatar>
                                 <!-- Name -->
                                 <v-list-tile-content>
@@ -35,13 +37,13 @@
             <!-- Products -->
             <v-flex xs12 sm7 md8 lg9>
                 <v-layout row wrap>
-                    <v-flex v-for="(item, i) in items" :key="i" xs12 md6 lg4>
+                    <v-flex v-for="(item, i) in items.data" :key="i" xs12 md6 lg4>
                         <Product
-                            class="mb-3"
                             :code="item.code"
-                            :image-src="item.image"
+                            :image="item.images[0]"
                             :price="item.price"
                             :is-material="isMaterial"
+                            class="mb-3"
                         />
                     </v-flex>
                 </v-layout>
@@ -50,7 +52,7 @@
         <!-- Pagination -->
         <div class="text-xs-center my-5">
             <v-pagination
-                :length="15"
+                :length="pages"
                 :total-visible="7"
                 v-model="page"
                 circle
@@ -81,17 +83,18 @@ export default {
             default: false
         }
     },
-    data() {
-        return {
-            options: {
-                zIndex: 2,
-                stickyTop: 100,
-                disabled: false
-            }
-        }
-    },
     components: {
         Product
+    },
+    data() {
+        return {
+            page: 1
+        }
+    },
+    computed: {
+        pages() {
+            return Math.ceil(this.items.total / 15)
+        }
     },
     methods: {
         url(id) {

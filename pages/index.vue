@@ -26,8 +26,8 @@
                 <v-flex v-for="(item, i) in productCategories" :key="i" xs12 sm6 md4 lg3>
                     <Category
                         :id="item.id"
-                        :title="item.title"
-                        :products-count="item.productCount"
+                        :name="item.name"
+                        :products-count="item.productsCount"
                         :image="item.image"
                     />
                 </v-flex>
@@ -43,7 +43,7 @@
                     <Product
                         :id="item.id"
                         :code="item.code"
-                        :image-src="item.images[0]"
+                        :image="item.images[0]"
                         :price="item.price"
                     />
                 </v-flex>
@@ -77,7 +77,7 @@
                     <Product
                         :id="item.id"
                         :code="item.code"
-                        :image-src="item.images[0]"
+                        :image="item.images[0]"
                         :price="item.price"
                     />
                 </v-flex>
@@ -128,42 +128,42 @@
 
 <script>
 import {
-  Category,
-  Feature,
-  Product,
-  Quote,
-  Slider
-} from '~/components'
-
-export default {
-  components: {
     Category,
     Feature,
     Product,
     Quote,
     Slider
-  },
-  async asyncData({ app }) {
-    // Get all quotes
-    const { quotes } = await app.$axios.$get('quotes')
-    // Get all features
-    const { features } = await app.$axios.$get('features')
-    // Get special products
-    const { products } = await app.$axios.$get('special/products')
-    // Get special materials
-    const { materials } = await app.$axios.$get('special/materials')
-    // Get all product categories
-    const { productCategories } = await app.$axios.$get('product/categories')
+} from '~/components'
 
-    console.log(productCategories)
+export default {
+    components: {
+        Category,
+        Feature,
+        Product,
+        Quote,
+        Slider
+    },
+    async asyncData({ app }) {
+        // Get all quotes
+        const { quotes } = await app.$axios.$get('quotes')
+        // Get all features
+        const { features } = await app.$axios.$get('features')
+        // Get special products
+        const { products } = await app.$axios.$get('special/products')
+        // Get special materials
+        const { materials } = await app.$axios.$get('special/materials')
+        // Get all product categories
+        const { productCategories } = await app.$axios.$get('product/categories')
 
-    return {
-      quotes,
-      features,
-      productCategories,
-      products,
-      materials
+        console.log(productCategories)
+
+        return {
+            quotes,
+            features,
+            productCategories,
+            products,
+            materials
+        }
     }
-  }
 }
 </script>
