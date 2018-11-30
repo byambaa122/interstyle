@@ -39,6 +39,7 @@
                 <v-layout row wrap>
                     <v-flex v-for="(item, i) in items.data" :key="i" xs12 md6 lg4>
                         <Product
+                            :id="item.id"
                             :code="item.code"
                             :image="item.images[0]"
                             :price="item.price"
@@ -67,9 +68,9 @@ import Product from '~/components/Product'
 export default {
     props: {
         items: {
-            type: Array,
+            type: Object,
             default() {
-                return []
+                return {}
             }
         },
         categories: {
@@ -91,16 +92,21 @@ export default {
             page: 1
         }
     },
+    watch: {
+        page(value) {
+            this.$emit('paginate', value)
+        }
+    },
     computed: {
         pages() {
-            return Math.ceil(this.items.total / 15)
+            return Math.ceil(this.items.total / this.items.perPage)
         }
     },
     methods: {
         url(id) {
             const baseUrl = `categories/${id}`
 
-            return this.material
+            return this.isMaterial
                 ? `/materials/${baseUrl}`
                 : `/products/${baseUrl}`
         }

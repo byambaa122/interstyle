@@ -46,6 +46,8 @@
         <v-content>
             <nuxt />
         </v-content>
+        <!-- Loader -->
+        <Loader />
         <!-- Scroll to top button -->
         <v-fab-transition>
             <v-btn
@@ -150,7 +152,12 @@
 </template>
 
 <script>
+import { Loader } from '~/components'
+
 export default {
+    components: {
+        Loader
+    },
     data() {
         return {
             offsetTop: 0,

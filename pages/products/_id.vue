@@ -3,62 +3,55 @@
         <v-container grid-list-lg>
             <v-layout row wrap>
                 <v-flex xs12 md6 lg4>
+                    <!-- Code -->
                     <h1 class="display-1 font-weight-light">
-                        LB0214
+                        {{ product.code }}
                     </h1>
                     <v-divider
                         class="my-3"
                         width="70"
                     ></v-divider>
+                    <!-- Description -->
                     <p class="subheading">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat magna imperdiet, in auctor.
+                        {{ product.description }}
                     </p>
-                    <v-layout row>
-                        <v-flex>
-                            <v-text-field
-                                label="Урт"
-                                value="1200"
-                                hint="мм"
-                                persistent-hint
-                                outline
-                            ></v-text-field>
-                        </v-flex>
-                        <v-flex>
-                            <v-text-field
-                                label="Өргөн"
-                                value="600"
-                                hint="мм"
-                                persistent-hint
-                                outline
-                            ></v-text-field>
-                        </v-flex>
-                        <v-flex>
-                            <v-text-field
-                                label="Өндөр"
-                                value="650"
-                                hint="мм"
-                                persistent-hint
-                                outline
-                            ></v-text-field>
-                        </v-flex>
-                    </v-layout>
-                    <div class="headline mt-2">
-                        299,000
+                    <!-- Category -->
+                    <v-chip
+                        class="mx-0"
+                        color="teal"
+                        text-color="white"
+                        disabled
+                        label
+                    >
+                        <b>{{ product.productCategory.name }}</b>
+                    </v-chip>
+                    <!-- Measure -->
+                    <v-chip
+                        class="mx-0"
+                        color="orange"
+                        text-color="white"
+                        disabled
+                        label
+                    >
+                        <b>{{ product.measure | measure }}</b>
+                    </v-chip>
+                    <!-- Price -->
+                    <div class="headline mt-4">
+                        {{ product.price | format }}
                         <span class="body-1 grey-text text--darken-1">
                             MNT
                         </span>
                     </div>
                 </v-flex>
                 <v-flex xs12 md6 lg8>
+                    <!-- Slider -->
                     <v-responsive :aspect-ratio="16/9">
-                        <v-carousel
-                            height="auto"
-                            hide-delimiters
-                        >
+                        <v-carousel height="auto">
+                            <!-- Slider item -->
                             <v-carousel-item
                                 v-for="(image, i) in product.images"
                                 :key="i"
-                                :src="image"
+                                :src="`${baseUrl}/${image}`"
                             ></v-carousel-item>
                         </v-carousel>
                     </v-responsive>
@@ -71,13 +64,13 @@
                 Санал болгох
             </div>
             <v-layout row wrap>
-                <v-flex v-for="(item, i) in suggests" :key="i" xs12 sm6 md4 lg3>
+                <v-flex v-for="(item, i) in products" :key="i" xs12 sm6 md4 lg3>
                     <Product
-                        class="mb-3"
                         :id="item.id"
                         :code="item.code"
-                        :image-src="item.image"
+                        :image="item.images[0]"
                         :price="item.price"
+                        class="mb-3"
                     />
                 </v-flex>
             </v-layout>
@@ -86,17 +79,7 @@
 </template>
 
 <script>
-import Product from '~/components/Product'
-
-const defaultProduct = {
-    id: '',
-    name: '',
-    price: '',
-    images: [
-        '/images/products/1.jpg',
-        '/images/products/2.jpg'
-    ]
-}
+import { Product } from '~/components'
 
 export default {
     components: {
@@ -104,33 +87,18 @@ export default {
     },
     data() {
         return {
-            product: defaultProduct,
-            suggests: [
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/1.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/2.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/3.jpg',
-                    price: '125,000'
-                },
-                {
-                    id: 1,
-                    code: 'LB0214',
-                    image: '/images/products/4.jpg',
-                    price: '125,000'
-                }
-            ]
+            baseUrl: process.env.BASE_URL
+        }
+    },
+    async asyncData({ app, params }) {
+        // Get product
+        const { product } = await app.$axios.$get(`products/${params.id}`)
+        // Get paginated products
+        const { products } = await app.$axios.$get(`suggest/products/${params.id}`)
+
+        return {
+            product,
+            products
         }
     }
 }

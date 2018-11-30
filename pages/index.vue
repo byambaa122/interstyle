@@ -2,7 +2,7 @@
     <div>
         <v-parallax
             src="/images/home.jpg"
-            height="500"
+            height="700"
         ></v-parallax>
         <!-- Features -->
         <v-container class="my-5">

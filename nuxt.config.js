@@ -19,7 +19,8 @@ export default {
     ],
     plugins: [
         '~/plugins/axios.js',
-        '~/plugins/vuetify.js'
+        '~/plugins/vuetify.js',
+        '~/helpers/filters.js'
     ],
     axios: {
         baseURL: `${process.env.BASE_URL}/api`

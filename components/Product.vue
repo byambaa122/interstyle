@@ -32,7 +32,7 @@
                 <v-flex>
                     <!-- Price -->
                     <div class="title font-weight-regular text-xs-right">
-                        {{ price }}
+                        {{ price | format }}
                         <!-- Currency symbol -->
                         <span class="caption grey--text text--darken-1">
                             MNT
