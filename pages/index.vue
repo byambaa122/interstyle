@@ -1,9 +1,20 @@
 <template>
     <div>
         <v-parallax
+            :height="parallax"
             src="/images/home.jpg"
-            height="700"
-        ></v-parallax>
+            dark
+        >
+            <v-layout
+                align-center
+                justify-center
+                column
+            >
+                <h1 class="jumbo-title">
+                    Модон <span class="font-weight-bold">ТАВИЛГЫН</span> <br> үйлдвэр
+                </h1>
+            </v-layout>
+        </v-parallax>
         <!-- Features -->
         <v-container class="my-5">
             <v-layout row wrap>
@@ -155,14 +166,23 @@ export default {
         // Get all product categories
         const { productCategories } = await app.$axios.$get('product/categories')
 
-        console.log(productCategories)
-
         return {
             quotes,
             features,
             productCategories,
             products,
             materials
+        }
+    },
+    computed: {
+        parallax() {
+            switch (this.$vuetify.breakpoint.name) {
+                case 'xs': return '200'
+                case 'sm': return '340'
+                case 'md': return '500'
+                case 'lg': return '500'
+                case 'xl': return '700'
+            }
         }
     }
 }
