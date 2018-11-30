@@ -2,7 +2,7 @@
     <div>
         <v-container grid-list-lg>
             <v-layout row wrap>
-                <v-flex xs12 md6 lg4>
+                <v-flex xs12 md6 lg4 order-xs2 order-md1>
                     <!-- Code -->
                     <h1 class="display-1 font-weight-light">
                         {{ material.code }}
@@ -33,7 +33,7 @@
                         </span>
                     </div>
                 </v-flex>
-                <v-flex xs12 md6 lg8>
+                <v-flex xs12 md6 lg8 order-xs1 order-md2>
                     <!-- Slider -->
                     <v-responsive :aspect-ratio="16/9">
                         <v-carousel height="auto">
