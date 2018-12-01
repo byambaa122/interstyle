@@ -8,7 +8,7 @@
         <!-- Image -->
         <v-img
             :aspect-ratio="16/9"
-            :src="`${baseUrl}/${image}`"
+            :src="`${baseUrl}/${image}?w=400`"
         ></v-img>
         <v-container
             class="pa-0"

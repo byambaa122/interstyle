@@ -10,7 +10,7 @@
         >
             <!-- Image -->
             <v-img
-                :src="`${baseUrl}/${image}`"
+                :src="`${baseUrl}/${image}?w=500`"
                 :aspect-ratio="16/9"
                 :gradient="gradient"
             >

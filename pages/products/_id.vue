@@ -51,7 +51,7 @@
                             <v-carousel-item
                                 v-for="(image, i) in product.images"
                                 :key="i"
-                                :src="`${baseUrl}/${image}`"
+                                :src="`${baseUrl}/${image}?w=800`"
                             ></v-carousel-item>
                         </v-carousel>
                     </v-responsive>
