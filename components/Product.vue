@@ -60,7 +60,7 @@ export default {
             required: true
         },
         price: {
-            type: Number,
+            type: [String, Number],
             required: true
         },
         isMaterial: {
@@ -76,8 +76,8 @@ export default {
     methods: {
         url(id) {
             return this.isMaterial
-                ? `/materials/${id}`
-                : `/products/${id}`
+                ? `/material?id=${id}`
+                : `/product?id=${id}`
         }
     }
 }

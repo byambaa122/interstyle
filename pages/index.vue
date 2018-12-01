@@ -78,7 +78,7 @@
                 </v-btn>
             </div>
         </v-container>
-        <!-- Products -->
+        <!-- Materials -->
         <v-container grid-list-lg>
             <div class="headline text-uppercase text-xs-center my-5">
                 Туслах материал
@@ -90,6 +90,7 @@
                         :code="item.code"
                         :image="item.images[0]"
                         :price="item.price"
+                        is-material
                     />
                 </v-flex>
             </v-layout>

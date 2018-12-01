@@ -13,6 +13,7 @@
                                 :to="url(category.id)"
                                 :key="i"
                                 avatar
+                                exact
                                 nuxt
                             >
                                 <!-- Icon -->
@@ -104,11 +105,9 @@ export default {
     },
     methods: {
         url(id) {
-            const baseUrl = `categories/${id}`
-
             return this.isMaterial
-                ? `/materials/${baseUrl}`
-                : `/products/${baseUrl}`
+                ? `/materials/categories?id=${id}`
+                : `/products/categories?id=${id}`
         }
     }
 }
