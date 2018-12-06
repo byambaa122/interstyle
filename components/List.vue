@@ -106,8 +106,8 @@ export default {
     methods: {
         url(id) {
             return this.isMaterial
-                ? `/materials/categories?id=${id}`
-                : `/products/categories?id=${id}`
+                ? `/materials/categories/${id}`
+                : `/products/categories/${id}`
         }
     }
 }

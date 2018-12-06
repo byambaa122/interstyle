@@ -76,8 +76,8 @@ export default {
     methods: {
         url(id) {
             return this.isMaterial
-                ? `/material?id=${id}`
-                : `/product?id=${id}`
+                ? `/materials/${id}`
+                : `/products/${id}`
         }
     }
 }

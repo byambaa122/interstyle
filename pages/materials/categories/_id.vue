@@ -14,25 +14,18 @@ export default {
     components: {
         List
     },
-    validate({ query }) {
-        // Must be a number
-        return /^\d+$/.test(query.id)
-    },
-    watchQuery: [
-        'id'
-    ],
-    async asyncData({ app, query }) {
+    async asyncData({ app, params }) {
         // Get paginated materials
         const { data, total, perPage } = await app.$axios.$get('materials', {
             params: {
-                id: query.id
+                id: params.id
             }
         })
         // Get all material categories
         const { materialCategories } = await app.$axios.$get('material/categories')
 
         return {
-            id: query.id,
+            id: params.id,
             materialCategories,
             materials: {
                 data,

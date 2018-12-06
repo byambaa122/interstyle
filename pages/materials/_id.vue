@@ -5,7 +5,7 @@
                 <v-flex xs12 md6 lg4 order-xs2 order-md1>
                     <!-- Code -->
                     <h1 class="display-1 font-weight-light">
-                        {{ product.code }}
+                        {{ material.code }}
                     </h1>
                     <v-divider
                         class="my-3"
@@ -13,7 +13,7 @@
                     ></v-divider>
                     <!-- Description -->
                     <p class="subheading">
-                        {{ product.description }}
+                        {{ material.description }}
                     </p>
                     <!-- Category -->
                     <v-chip
@@ -23,21 +23,11 @@
                         disabled
                         label
                     >
-                        <b>{{ product.productCategory.name }}</b>
-                    </v-chip>
-                    <!-- Measure -->
-                    <v-chip
-                        class="mx-0"
-                        color="orange"
-                        text-color="white"
-                        disabled
-                        label
-                    >
-                        <b>{{ product.measure | measure }}</b>
+                        <b>{{ material.materialCategory.name }}</b>
                     </v-chip>
                     <!-- Price -->
                     <div class="headline mt-4">
-                        {{ product.price | format }}
+                        {{ material.price | format }}
                         <span class="body-1 grey-text text--darken-1">
                             MNT
                         </span>
@@ -49,7 +39,7 @@
                         <v-carousel height="auto">
                             <!-- Slider item -->
                             <v-carousel-item
-                                v-for="(image, i) in product.images"
+                                v-for="(image, i) in material.images"
                                 :key="i"
                                 :src="`${baseUrl}/${image}?w=800`"
                             ></v-carousel-item>
@@ -58,19 +48,20 @@
                 </v-flex>
             </v-layout>
         </v-container>
-        <!-- Suggested products -->
+        <!-- Suggested materials -->
         <v-container grid-list-lg>
             <div class="headline text-uppercase my-5">
                 Санал болгох
             </div>
             <v-layout row wrap>
-                <v-flex v-for="(item, i) in products" :key="i" xs12 sm6 md4 lg3>
+                <v-flex v-for="(item, i) in materials" :key="i" xs12 sm6 md4 lg3>
                     <Product
                         :id="item.id"
                         :code="item.code"
                         :image="item.images[0]"
                         :price="item.price"
                         class="mb-3"
+                        is-material
                     />
                 </v-flex>
             </v-layout>
@@ -85,27 +76,20 @@ export default {
     components: {
         Product
     },
-    validate({ query }) {
-        // Must be a number
-        return /^\d+$/.test(query.id)
-    },
-    watchQuery: [
-        'id'
-    ],
     data() {
         return {
             baseUrl: process.env.BASE_URL
         }
     },
-    async asyncData({ app, query }) {
-        // Get product
-        const { product } = await app.$axios.$get(`products/${query.id}`)
-        // Get paginated products
-        const { products } = await app.$axios.$get(`suggest/products/${query.id}`)
+    async asyncData({ app, params }) {
+        // Get material
+        const { material } = await app.$axios.$get(`materials/${params.id}`)
+        // Get paginated materials
+        const { materials } = await app.$axios.$get(`suggest/materials/${params.id}`)
 
         return {
-            product,
-            products
+            material,
+            materials
         }
     }
 }

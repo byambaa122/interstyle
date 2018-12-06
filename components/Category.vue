@@ -14,7 +14,6 @@
                 :aspect-ratio="16/9"
                 :gradient="gradient"
             >
-                </v-expand-transition>
                 <v-layout
                     class="white--text pa-4"
                     fill-height
